@@ -1,0 +1,5 @@
+1. Descargar PgAdmin(para posgrest) link https://www.enterprisedb.com/thank-you-downloading-postgresql?anid=1256714
+2. cd [espacio] nombre de la carpeta donde tengo la interfaz grafica
+3. npm install (instalar todos los paquetes, solo cuando se inicie por primera vez el servidor)
+4. npm run dev (para que corra el servidor),  cuando esto pase se muestra la interfaz  
+5. Pagina de documentación https://demos.creative-tim.com/vue-material-kit/#/

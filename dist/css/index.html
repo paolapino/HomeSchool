@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>HomeSchool</title>
+
+    <!--  Fonts and icons de toda la plantilla     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
+
+    <link rel="canonical" href="https://www.creative-tim.com/product/hipster-as-f-cards"/>
+
+    <!-- Stilos tarjetas eventos y noticias      -->
+
+  <link href="@/assets/scss/hipster_cards.css" rel="stylesheet"/>
+  <link href="@/assets/scss/hipster_cards.css" rel="stylesheet"/>
+    <!-- Termina estilos tarjetas eventos y noticias      -->
+
+    <!--Estilos para la pagina principal Pao-->
+ <!--Ojo esta mandando a llamar mal a las css-->
+ <link href="/assets/scss/Principal.css" rel="stylesheet"/>
+
+ <link href='/assets/scss/informacion/bootstrap.css' rel='stylesheet' />
+ <link href="/assets/scss/informacion/pe-icon-7-stroke.css" rel="stylesheet" />
+ <link href='/assets/scss/informacion/rotating-card.css' rel='stylesheet' />
+ <script src="/assets/scss/informacion/bootstrap.min.js"></script>
+ <script src="/assets/scss/informacion/jquery-1.10.2.js"></script>
+ <meta content='width=device-width, initial-scale=1.0' />
+ 
+ <link href="https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+ <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+ <!--Termina Estilos para la pagina principal PAO-->
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but vue-material-kit doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+
+<script type="text/javascript">
+  $().ready(function(){
+      $('[rel="tooltip"]').tooltip();
+
+      $('a.scroll-down').click(function(e){
+          e.preventDefault();
+          scroll_target = $(this).data('href');
+           $('html, body').animate({
+               scrollTop: $(scroll_target).offset().top - 60
+           }, 1000);
+      });
+
+  });
+
+  function rotateCard(btn){
+      var $card = $(btn).closest('.card-container');
+      console.log($card);
+      if($card.hasClass('hover')){
+          $card.removeClass('hover');
+      } else {
+          $card.addClass('hover');
+      }
+  }
+
+</script>
