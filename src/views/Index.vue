@@ -7,7 +7,7 @@
             
             <div class="brand">
               <h1>HomeSchool</h1>
-              <h3>Institución eduacativa Campo Alegre</h3>
+              <h3>Institución eduacativa Timbio</h3>
             </div>
           </div>
         </div>
