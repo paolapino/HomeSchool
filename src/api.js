@@ -29,6 +29,19 @@ api.registroInicio = function(name,username,email,role,password){
     .catch(err => console.log('[ERROR]',err))
 }
 
+api.verificarid = function(id){
+    return trae.get('/verificar/'+id)
+    .then(res => res.data)
+    .catch(err => console.log('[ERROR]'+id,err))
+}
+
+api.verificarcorreo = function(correo){
+    return trae.get('/verificarcorreo/'+correo)
+    .then(res => res.data)
+    .catch(err => console.log('[ERROR]'+correo,err))
+}
+
+
 api.getStatus = function(){
     return trae.get('/')
     .then(res => res.data)

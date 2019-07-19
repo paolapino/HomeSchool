@@ -6,10 +6,19 @@
 
 
     <div class="section page-header header-filter" :style="headerStyle">
+
+
+
+
       <div class="container">
+
+
         <div class="md-layout">
+          
           <div
             class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto">
+
+
            <form @submit.prevent="acceso">
                         <login-card header-color="green">
                           <h4 slot="title" class="card-title">Inicio Sesion</h4>
@@ -40,9 +49,9 @@
                                     <p slot="description" class="description">Digita tus datos para acceder a la sitio.</p>
                                     
                                     <md-field class="md-form-group" slot="inputs">
-                                      <md-icon>email</md-icon>
-                                      <label>Email...</label>
-                                      <md-input v-model="username" type="email" name="username"></md-input>
+                                      <md-icon>perm_identity</md-icon>
+                                      <label>Número de identificación...</label>
+                                      <md-input v-model="username" type="email" name="username" @change="verificarid" @input="verificarid"></md-input>
                                     </md-field>
                                     <md-field class="md-form-group" slot="inputs">
                                       <md-icon>lock_outline</md-icon>
@@ -75,6 +84,25 @@
 <script>
 import { LoginCard } from "@/components";
 import api from '@/api'
+ import toastr from 'toastr';
+
+ toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": true,
+  "positionClass": "toast-bottom-full-width",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
 
 export default {
   components: {
@@ -97,6 +125,7 @@ export default {
           window.localStorage.token = res.accessToken
           window.localStorage.user = res.username
           window.localStorage.role = res.authorities[0].authority
+          
           console.log("-----"+res.username);
           console.log("-----"+res.accessToken);
           console.log(res.authorities[0].authority);
@@ -126,14 +155,34 @@ export default {
           }
 
         })
-        .catch(err => (this.error = {error:err.error,message:err.message})
-        
-        )
+        .catch(err => (
+          toastr.error('Datos Incorrectos')))
+
         
         console.log("---"+this.error.error);
         console.log("---"+this.error.message);
         console.log("Enttra acceso" +this.username +"---"+this.password);
-      }
+      },
+    removeNotify(e, notifyClass) {
+     
+      return this.notificacion = false;
+    
+  },
+    verificarid(){
+      api.verificarid(this.username)
+      .then(res =>{
+
+        if(res){
+          toastr.success('Esta identificación es correcta')
+        }else{
+         // toastr.success('Este usuario esta disponible',{progressBar:true})
+         console.log("Este usuario esta disponible");
+        }
+        
+        
+        })
+      .catch(err => {console.log("Esto no salio nada bien...")})
+    }
   },
   props: {
     header: {

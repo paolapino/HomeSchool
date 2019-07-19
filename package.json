@@ -20,6 +20,7 @@
     "nouislider": "13.1.0",
     "semantic-ui-css": "^2.4.1",
     "server-static": "^2.0.5",
+    "toastr": "^2.1.4",
     "trae": "^1.4.2",
     "v-tooltip": "2.0.0-rc.33",
     "vue": "2.6.6",

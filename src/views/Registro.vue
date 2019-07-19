@@ -38,12 +38,12 @@
               <md-field class="md-form-group" slot="inputs">
               <md-icon>perm_identity</md-icon>
                 <label>Número de identificación...</label>
-                <md-input v-model="numeroId"></md-input>
+                <md-input v-model="numeroId" @change="verificarid" @input="verificarid"></md-input>
               </md-field>
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>email</md-icon>
                 <label>Email...</label>
-                <md-input v-model="email" type="email"></md-input>
+                <md-input v-model="email" type="email" @change="verificarcorreo" @input="verificarcorreo"></md-input>
               </md-field>
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>lock_outline</md-icon>
@@ -69,6 +69,25 @@
 <script>
 import { LoginCard } from "@/components";
 import api from '@/api'
+ import toastr from 'toastr';
+
+ toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": true,
+  "positionClass": "toast-bottom-full-width",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
 
 export default {
 
@@ -105,6 +124,36 @@ export default {
           api.registroInicio(this.nombre,this.numeroId,this.email,this.role,this.password)
           .then(res =>{console.log("---"+res.message)})
           .catch(err =>{console.log("---"+err)})
+    },
+    verificarid(){
+      api.verificarid(this.numeroId)
+      .then(res =>{
+
+        if(res){
+          toastr.error('Este usuario ya esta ocupado')
+        }else{
+         // toastr.success('Este usuario esta disponible',{progressBar:true})
+         console.log("Este usuario esta disponible");
+        }
+        
+        
+        })
+      .catch(err => {console.log("Esto no salio nada bien...")})
+    },
+    verificarcorreo(){
+      api.verificarcorreo(this.email)
+      .then(res =>{
+
+        if(res){
+          toastr.error('Este email ya esta ocupado')
+        }else{
+         // toastr.success('Este usuario esta disponible',{progressBar:true})
+         console.log("Este email esta disponible");
+        }
+        
+        
+        })
+      .catch(err => {console.log("Esto no salio nada bien...")})
     }
   }
 };
