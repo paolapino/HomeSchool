@@ -162,6 +162,7 @@ export default {
         console.log("---"+this.error.error);
         console.log("---"+this.error.message);
         console.log("Enttra acceso" +this.username +"---"+this.password);
+        console.log("Un cambio para que se actualize en github");
       },
     removeNotify(e, notifyClass) {
      
