@@ -49,7 +49,7 @@
                         data-toggle="dropdown"
                       >
                         <i class="material-icons">apps</i>
-                        <p>Otros LInks??</p>
+                        
                       </md-button>
                       <ul class="dropdown-menu dropdown-with-icons">
                         <li>
@@ -72,62 +72,13 @@
                 </a>
               </li>
 
-           
-
-              <md-list-item
-                href="javascript:void(0)"
-                @click="scrollToElement()"
-                v-if="showDownload"
-              >
-                <i class="material-icons">cloud_download</i>
-                <p>Inicio</p>
-              </md-list-item>
-              <md-list-item
-                href="#/profile"
-                @click="scrollToElement()"
-                v-if="showDownload"
-              >
-                <i class="material-icons">cloud_download</i>
-                <p>Contactenos</p>
-              </md-list-item>
-              <md-list-item
-                href="#/profileAdmi"
-                @click="scrollToElement()"
-                v-if="showDownload"
-              >
-                <i class="material-icons">cloud_download</i>
-                <p>A cerca de nosotros</p>
-              </md-list-item>
-
-               <md-list-item
+            <!--Items Menus -->
+            <md-list-item
                 href="#/login"
               >
                 <i class="material-icons">account_circle</i>
                 <p>Iniciar Sesion</p>
-              </md-list-item>
-
-              <md-list-item
-                @click="logout"
-                
-              >
-                <i class="material-icons">account_circle</i>
-                <p>Salir</p>
-              </md-list-item>
-
-              <md-list-item
-              >
-                <i class="material-icons">account_circle</i>
-                <p>{{loginStaus}}</p>
-              </md-list-item>
-
-               <md-list-item
-               @click="probar"
-              >
-                <i class="material-icons">account_circle</i>
-                <p>Valiar</p>
-              </md-list-item>
-
-
+            </md-list-item>
               <li class="md-list-item" >
                 <a
                   href="javascript:void(0)"
@@ -140,22 +91,20 @@
                         class="md-button md-button-link md-white md-simple dropdown-toggle"
                         data-toggle="dropdown"
                       >
-                        <i class="material-icons">apps</i>
-                        <p>Otros LInks??</p>
+                        <i class="material-icons">apps</i>    
                       </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li>
+                      <ul class="dropdown-menu dropdown-with-icons" >
+                        <li >
                           <a href="#/">
                             <i class="material-icons">layers</i>
-                            <p>?????</p>
+                            <p>Modificar Perfil </p>
+                           
                           </a>
                         </li>
-                        <li>
-                          <a
-                            href="#"
-                          >
-                            <i class="material-icons">content_paste</i>
-                            <p>??????</p>
+                        <li> 
+                          <a @click="logout">
+                            <i class="material-icons" >content_paste</i>
+                            <p>Cerrar Sesión</p>
                           </a>
                         </li>
                       </ul>
@@ -163,41 +112,6 @@
                   </div>
                 </a>
               </li>
-              
-         
-
-              
-
-              <md-list-item
-                href="https://twitter.com/CreativeTim"
-                target="_blank"
-              >
-                <i class="fab fa-twitter"></i>
-                <p class="hidden-lg">Twitter</p>
-                <md-tooltip md-direction="bottom"
-                  >Follow us on Twitter</md-tooltip
-                >
-              </md-list-item>
-              <md-list-item
-                href="https://www.facebook.com/CreativeTim"
-                target="_blank"
-              >
-                <i class="fab fa-facebook-square"></i>
-                <p class="hidden-lg">Facebook</p>
-                <md-tooltip md-direction="bottom"
-                  >Like us on Facebook</md-tooltip
-                >
-              </md-list-item>
-              <md-list-item
-                href="https://www.instagram.com/CreativeTimOfficial"
-                target="_blank"
-              >
-                <i class="fab fa-instagram"></i>
-                <p class="hidden-lg">Instagram</p>
-                <md-tooltip md-direction="bottom"
-                  >Follow us on Instagram</md-tooltip
-                >
-              </md-list-item>
             </md-list>
           </div>
         </div>
