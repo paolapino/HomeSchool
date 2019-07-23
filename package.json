@@ -1,7 +1,6 @@
 {
   "name": "vue-material-kit",
-  "author": "Creative Tim https://www.creative-tim.com/",
-  "description": "Vue Material Kit",
+  "description": "HomeSchool",
   "version": "1.1.0",
   "private": true,
   "scripts": {

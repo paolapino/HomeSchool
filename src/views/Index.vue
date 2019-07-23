@@ -13,73 +13,122 @@
         </div>
       </div>
     </parallax>
-    <div class="main main-raised">
-    
-    <div class="section section-basic">
-        <div class="container">
-          <div class="title">
-            <h1>¿Como Funciona HomeSchool?</h1>
-          </div>
-        </div>
+    <div class="main main-raised md-layout md-gutter" classs="masonry-container" >
+<!-- Comment --> 
+         <div class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25">
+                <div class="card text-center" data-background="image"   >
+                    <h4 class="title title-modern">Hipster Vacation</h4>
+                                        <div class="content">
+                        <div class="price">
+                            <h6>From</h6>
+                            <h4>2.799<b class="currency">$</b></h4>
+                        </div>
+                        <p class="description">When selling products it's always a good idea to go with commanding fonts that are good at showing authority and security.</p>
+                    </div>
+                    <div class="filter"></div>
+                    <div class="footer btn-center">
+                        <button class="btn btn-neutral btn-round btn-fill">Book Now!</button>
+                    </div>
+                </div> <!-- end card -->
+            </div>
+
+<!-- Comment -->
+<!-- tarjeta 2 -->
+        <div class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25">
+                <div class="card text-center" data-background="image"  data-src="@/assets/img/examples/studio-1.jpg"  style="background-color:orange">
+                    <h4 class="title title-modern">Hipster Vacation</h4>
+                                        <div class="content">
+                        <div class="price">
+                            <h6>From</h6>
+                            <h4>2.799<b class="currency">$</b></h4>
+                        </div>
+                        <p class="description">When selling products it's always a good idea to go with commanding fonts that are good at showing authority and security.</p>
+                    </div>
+                    <div class="filter"></div>
+                    <div class="footer btn-center">
+                        <button class="btn btn-neutral btn-round btn-fill">Book Now!</button>
+                    </div>
+                </div> <!-- end card -->
+            </div>
+
+<!-- fin tarjeta 2 --> 
+
+<!-- tarjeta 2 -->
+        <div class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25">
+                <div class="card text-center" data-background="image"  data-src="@/assets/img/examples/studio-1.jpg" style="background-color:red; vertical-align: middle;">
+                    <h4 class="title title-modern">Hipster Vacation</h4>
+                                        <div class="content">
+                        <div class="price">
+                            <P>Willinton vidal</P>
+                            <h6>From</h6>
+                            <h4>2.799<b class="currency">$</b></h4>
+                        </div>
+                        <p class="description">When selling products it's always a good idea to go with commanding fonts that are good at showing authority and security.</p>
+                    </div>
+                    <div class="filter"></div>
+                    <div class="footer btn-center">
+                        <button class="btn btn-neutral btn-round btn-fill">Book Now!</button>
+                    </div>
+                </div> <!-- end card -->
+            </div>
+
+<!-- fin tarjeta 2 --> 
+
+<!-- tarjeta 2 -->
+        <div class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25">
+                <div class="card text-center" data-background="image"  data-src="@/assets/img/examples/studio-1.jpg" >
+                    <h4 class="title title-modern">Hipster Vacation</h4>
+                                        <div class="content">
+                        <div class="price">
+                            <h6>From</h6>
+                            <h4>2.799<b class="currency">$</b></h4>
+                        </div>
+                        <p class="description">When selling products it's always a good idea to go with commanding fonts that are good at showing authority and security.</p>
+                    </div>
+                    <div class="filter"></div>
+                    <div class="footer btn-center">
+                        <button class="btn btn-neutral btn-round btn-fill">Book Now!</button>
+                    </div>
+                </div> <!-- end card -->
+            </div>
+
+<!-- fin tarjeta 2 --> 
+
+
+
+
+        <h2 class="subtitle">
+          Estado de la API
+          <span @click="getStatus">♻️</span>
+        </h2>
+        <pre>
+          <code>
+            {{ apiStatus }}
+          </code>
+        </pre>
+     
+
+      <div class="content">
+        <h2 class="subtitle">
+          Estado del Token
+          <span @click="checkToken">♻️</span>
+        </h2>
+        <pre>
+          <code>
+            {{ tokenStatus }}
+          </code>
+        </pre>
       </div>
+  
 
-    <div class="section section-basic">
-        <div class="container">
 
-            <cartasPaola></cartasPaola>
 
-        </div>
     </div>
-
-    <div class="section section-basic">
-        <div class="container">
-          <div class="title">
-            <h1>...........</h1>
-          </div>
-        </div>
-      </div>
-
-    
-    </div> <!--Div del cuerpo-->
   </div>
 </template>
 
-
-
-
-    <style>
-    .centrar{
-  
-      display:flex;
-      align-items:center;
-      margin: 0 auto;
-      }
-        body{
-            margin-top: 100px;
-        }
-       
-        .btn-info,
-        .btn-info:hover,
-        .btn-info:focus{
-            color: #FFF !important;
-            background-color: #00bbff !important;
-            border-color: #00bbff !important;
-        }
-
-        .btn-info{
-            opacity: .8;
-            transition: all 0.1s;
-            -webkit-transition: all 0.1s;
-        }
-        .btn-info:hover,
-        .btn-info:focus{
-            opacity: 1;
-        }
-    </style>
-
 <script>
 import BasicElements from "./components/BasicElementsSection";
-import cartasPaola from "./components/cartasPaola";
 import Navigation from "./components/NavigationSection";
 import SmallNavigation from "./components/SmallNavigationSection";
 import Tabs from "./components/TabsSection";
@@ -102,8 +151,7 @@ export default {
     Notifications,
     TypographyImages,
     JavascriptComponents,
-    LoginCard,
-    cartasPaola
+    LoginCard
   },
   name: "index",
   bodyClass: "index-page",
